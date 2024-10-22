@@ -1,7 +1,7 @@
 package com.example.movieticket;
+
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -10,9 +10,11 @@ public class TestConnection {
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setUser("sa");
         ds.setPassword("123");
-        ds.setServerName("DESKTOP-VU8S7EI\\MSSQLSERVER01");
+//        ds.setServerName("DESKTOP-VU8S7EI\\MSSQLSERVER01");
+        ds.setServerName("DESKTOP-996V6GP");
         ds.setPortNumber(1433);
         ds.setDatabaseName("TICKETONLINE");
+        ds.setEncrypt(false);
 
         try(Connection conn = ds.getConnection()) {
             System.out.println("Connection success!");
